@@ -26,8 +26,7 @@ const CollectionDetails = ({params}:{params: {collectionId: string}}) => {
   },[])
 
   return loading ? <Loader/> : (
-    <div className='p-10'>
-        <p className='text-heading2-bold'>Collection details</p>
+    <div>
         <CollectionForm initialData={collectionDetails}/>
     </div>
   )

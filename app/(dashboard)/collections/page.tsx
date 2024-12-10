@@ -2,6 +2,7 @@
 
 import { columns } from '@/components/collections/CollectionColumns';
 import { DataTable } from '@/components/custom ui/DataTable';
+import Loader from '@/components/custom ui/Loader';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Plus } from 'lucide-react';
@@ -33,8 +34,8 @@ const Collections = () => {
 
   console.log(collections)
 
-  return (
-    <div className='p-10'>
+  return loading ? <Loader/> : (
+    <div>
       <div className='flex justify-between'>
         <p className='text-heading2-bold'>Collections</p>
         <Button onClick={()=>router.push("/collections/new")} className='bg-blue-1 text-white'><Plus/>Create Collection</Button>

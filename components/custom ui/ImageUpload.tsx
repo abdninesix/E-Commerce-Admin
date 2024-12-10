@@ -17,17 +17,16 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ value, onChange, onRemove }) 
         <div>
             <div className='mb-4 flex flex-wrap items-center gap-4'>
                 {value.map((url)=>(
-                    <div className='relative h-[200px] w-[200px]'>
+                    <div key={url} className='relative h-[200px] w-[200px]'>
                         <div className='absolute top-0 right-0 z-10'><Button onClick={()=>onRemove(url)} size="sm" className='bg-red-1 text-white'><Trash/></Button></div>
-                        <Image src={url} alt='collection' fill className='object-cover rounded-lg' />
-                    </div>
-                    
+                        <Image src={url} alt='image' fill className='object-cover rounded-lg' />
+                    </div>                 
                 ))}
             </div>
-            <CldUploadWidget uploadPreset="borcella" onSuccess={onUpload}>
+            <CldUploadWidget uploadPreset="borcella" onUpload={onUpload}>
                 {({ open }) => {
                     return (
-                        <Button onClick={() => open()} className='bg-gray-1 text-white'>
+                        <Button type='button' onClick={() => open()} className='bg-gray-1 text-white'>
                             <Plus/>
                             Upload an Image
                         </Button>

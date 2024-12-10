@@ -73,11 +73,11 @@ const CollectionForm: React.FC<CollectionFormProps> = ({initialData}) => {
   }
 
   return (
-    <div className='p-10'>
+    <div>
       {initialData ? (
         <div className='flex items-center justify-between'>
           <p className='text-heading2-bold'>Edit collection</p>
-          <Delete id={initialData._id}/>
+          <Delete item='collection' id={initialData._id}/>
         </div>
         
         ) : (
