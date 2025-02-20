@@ -11,6 +11,7 @@ type ProductType = {
     title: string;
     description: string;
     media: [string];
+    category: string;
     collections: [CollectionType];
     tags: [string];
     sizes: [string];
