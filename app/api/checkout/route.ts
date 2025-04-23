@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
             success_url: `${process.env.ECOMMERCE_STORE_URL}/payment_success`,
             cancel_url: `${process.env.ECOMMERCE_STORE_URL}/cart`,
         })
-        return NextResponse.json(session, {headers: corsHeaders})
+        return NextResponse.json(session, { headers: corsHeaders })
     } catch (error) {
         console.log("[Checkout_POST]", error)
         return new NextResponse("Internal server error", { status: 500 })
